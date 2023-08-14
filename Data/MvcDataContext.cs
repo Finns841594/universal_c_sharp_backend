@@ -7,7 +7,6 @@ public class MvcDataContext : DbContext
   {}
 
   public DbSet<Puppy>? Puppies { get; set; }
-  public DbSet<Bear>? Bears { get; set; }
   protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
   {
     optionsBuilder.UseNpgsql("User Id=postgres;Password=postgres;Server=127.0.0.1;Port=5432;Database=puppies");

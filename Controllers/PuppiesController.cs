@@ -24,15 +24,4 @@ public class PuppiesController : ControllerBase
           var puppies = await _context.Puppies.ToListAsync();
           return Ok(puppies);
     }
-    [HttpGet("/GetBears")]
-    public async Task<ActionResult<IEnumerable<Bear>>> GetBears()
-    {
-        if (_context.Bears == null)
-          {
-              return NotFound();
-          }
-          var Bears = await _context.Bears.ToListAsync();
-          return Ok(Bears);
-    }
-
 }
