@@ -14,13 +14,13 @@ public class MvcDataContext : DbContext
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {
     modelBuilder.Entity<Puppy>().HasData(
-    new { name = "Rex", breed = "German Shepherd" },
-    new { name = "Buddy", breed = "Golden Retriever" },
-    new { name = "Max", breed = "Bulldog" },
-    new { name = "Bella", breed = "Labrador Retriever" },
-    new { name = "Milo", breed = "Poodle" },
-    new { name = "Daisy", breed = "Rottweiler" },
-    new { name = "Luna", breed = "Yorkshire Terrier" });
+    new Puppy { Id = -1, Name = "Rex", Breed = "German Shepherd" },
+    new Puppy { Id = -2, Name = "Buddy", Breed = "Golden Retriever" },
+    new Puppy { Id = -3, Name = "Max", Breed = "Bulldog" },
+    new Puppy { Id = -4, Name = "Bella", Breed = "Labrador Retriever" },
+    new Puppy { Id = -5, Name = "Milo", Breed = "Poodle" },
+    new Puppy { Id = -6, Name = "Daisy", Breed = "Rottweiler" },
+    new Puppy { Id = -7, Name = "Luna", Breed = "Yorkshire Terrier" });
   }
 
 }
