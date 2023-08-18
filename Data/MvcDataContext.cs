@@ -9,11 +9,13 @@ public class MvcDataContext : DbContext
   public DbSet<Puppy>? Puppies { get; set; }
   protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
   {
+    // Should hide the sql connect string
     optionsBuilder.UseNpgsql("User Id=postgres;Password=postgres;Server=127.0.0.1;Port=5432;Database=puppies");
   }
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {
     modelBuilder.Entity<Puppy>().HasData(
+    // Set id to minus numbers to prevent from interfering with real data
     new Puppy { Id = -1, Name = "Rex", Breed = "German Shepherd" },
     new Puppy { Id = -2, Name = "Buddy", Breed = "Golden Retriever" },
     new Puppy { Id = -3, Name = "Max", Breed = "Bulldog" },
